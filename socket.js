@@ -8,6 +8,10 @@ var socket = require('socket.io');
 module.exports = function(app, arm) {
   var io = socket.listen(app);
   
+  io.configure(function() {
+    io.set('log', false);
+  });
+  
   io.sockets.on('connection', function(socket) {
     socket.on('handClose', function() {
       arm.closeHand();
@@ -39,6 +43,10 @@ module.exports = function(app, arm) {
     
     socket.on('turnRight', function() {
       arm.turnRight();
+    });
+    
+    socket.on('capture', function(data) {
+      io.sockets.emit('capture', data);
     });
   });
   

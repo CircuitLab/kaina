@@ -25,6 +25,7 @@ app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 // Routes
 
 app.get('/', routes.index);
+app.get('/admin', routes.admin);
 
 /**
  * Boot.
