@@ -12,7 +12,7 @@ var express = require('express')
 var app = module.exports = express.createServer()
   , arm = new Arm(null, 'production' !== process.env.NODE_ENV);
 
-// Configuration
+// Configuration.
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -43,6 +43,7 @@ app.get('/admin', routes.admin);
 
 arm.board.on('ready', function() {
   var io = socket(app, arm);
+  
   app.listen(process.env.PORT || 3000, function() {
     console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
   });
