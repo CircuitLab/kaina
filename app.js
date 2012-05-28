@@ -22,7 +22,13 @@ app.use(app.router);
 app.use(express.static(__dirname + '/public'));
 app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
-// Routes
+// Helpers.
+
+app.helpers({
+    title: 'kaina'
+});
+
+// Routes.
 
 app.get('/', routes.index);
 app.get('/admin', routes.admin);
