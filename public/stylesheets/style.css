@@ -1,8 +1,16 @@
+html {
+  background-color: #000;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 50px;
+  color: #fff;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 a {
-  color: #00B7FF;
+  color: lightgreen;
 }
