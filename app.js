@@ -10,7 +10,7 @@ var express = require('express')
   , Arm = require('./lib/arm');
 
 var app = module.exports = express.createServer()
-  , arm = new Arm(null, true);
+  , arm = new Arm(null, 'production' !== process.env.NODE_ENV);
 
 // Configuration
 
