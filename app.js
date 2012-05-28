@@ -31,6 +31,10 @@ app.helpers({
 // Routes.
 
 app.get('/', routes.index);
+app.all('/admin', express.basicAuth(function(user, pass) {
+  return user === (process.env.ADMIN_USER || 'admin')
+    && pass === (process.env.ADMIN_PASS || 'pass');
+}));
 app.get('/admin', routes.admin);
 
 /**
