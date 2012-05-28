@@ -1,36 +1,67 @@
-var socket = window.socket = io.connect()
-  , img = document.createElement('img')
-  , width = 960
-  , height = 720;
 
-$(function() {
+/**
+ * Application main script.
+ */
 
-  img.width = width;
-  img.height = height;
-  img.style.display = 'block';
-  document.body.appendChild(img);
+(function(exports) {
   
-  $('#controller').bind('keypress', function(e) {
-    if (e.which == 98) {
-      socket.emit('handClose');
-    } else if (e.which == 121) {
-      socket.emit('handOpen');
-    } else if (e.which == 117) {
-      socket.emit('1stUp');
-    } else if (e.which == 110) {
-      socket.emit('1stDown');
-    } else if (e.which == 106) {
-      socket.emit('2ndDown');
-    } else if (e.which == 107) {
-      socket.emit('2ndUp');
-    } else if (e.which == 104) {
-      socket.emit('turnLeft');
-    } else if (e.which == 108) {
-      socket.emit('turnRight');
-    }
+  /**
+   * Connect to Socket.IO server.
+   */
+  
+  var socket = exports.socket = io.connect();
+  
+  /**
+   * Charactor code and evnet pair.
+   */
+  
+  var charCode = {
+      98: 'handClose'
+    , 121: 'handOpen'
+    , 117: '1stUp'
+    , 110: '1stDown'
+    , 106: '2ndDown'
+    , 107: '2ndUp'
+    , 104: 'turnLeft'
+    , 108: 'turnRight'
+  };
+  
+  
+  /**
+   * Bootstrap.
+   */
+  
+  $(function() {
+  
+    /**
+     * Handle `keydown` and `keypress` event.
+     */
+    
+    $(document).on('keydown keypress', function(e) {
+      var event = charCode[e.charCode];
+      if (event) {
+        socket.emit(event);
+      }
+    });
+    
+    /**
+     * Handle `keyup` event.
+     */
+    
+    $(document).on('keyup', function(e) {
+      var event = charCode[e.charCode];
+      if (event) {
+        socket.emit(event + ':stop');
+      }
+    });
+    
+    /**
+     * Handle `capture` evnet.
+     */
+    
+    socket.on('capture', function(data) {
+      document.body.style.backgroundImage = 'url(' + data + ')';
+    });
   });
   
-  socket.on('capture', function(data) {
-    img.src = data;
-  });
-});
+})(this);
