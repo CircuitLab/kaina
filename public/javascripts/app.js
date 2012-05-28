@@ -37,7 +37,7 @@
      * Handle `keydown` and `keypress` event.
      */
     
-    $(document).on('keydown keypress', function(e) {
+    $(document).on('keypress', function(e) {
       var event = charCode[e.charCode];
       if (event) {
         socket.emit(event);
