@@ -62,6 +62,14 @@
     socket.on('capture', function(data) {
       document.body.style.backgroundImage = 'url(' + data + ')';
     });
+
+    /**
+     * Cover background image.
+     */
+    
+    $(window).on('resize', function(e) {
+      $('body').css('height', window.innerHeight);
+    }).trigger('resize');
   });
   
 })(this);
