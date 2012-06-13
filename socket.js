@@ -14,19 +14,23 @@ module.exports = function(app, arm) {
   
   io.sockets.on('connection', function(socket) {
     
+    /*
     socket.on('handClose', function() {
       arm.closeHand();
     });
     socket.on('handClose:stop', function() {
       arm._off(arm.pins.closeHand);
     });
+    */
     
+    /*
     socket.on('handOpen', function() {
       arm.openHand();
     });
     socket.on('handOpen:stop', function() {
       arm._off(arm.pins.openHand);
     });
+    */
     
     socket.on('1stUp', function() {
       arm.upFirst();
@@ -71,7 +75,7 @@ module.exports = function(app, arm) {
     });
     
     socket.on('capture', function(data) {
-      io.sockets.emit('capture', data);
+      io.sockets.volatile.emit('capture', data);
     });
   });
   
