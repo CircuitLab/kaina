@@ -1,5 +1,5 @@
 html {
-  background-color: #000;
+  background-color: #fff;
 }
 
 body {
@@ -14,4 +14,9 @@ body {
 
 a {
   color: lightgreen;
+}
+
+input {
+  -webkit-transform-origin: 0 0;
+  -webkit-transform: scale(3);
 }
