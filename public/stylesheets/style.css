@@ -16,7 +16,8 @@ a {
   color: lightgreen;
 }
 
-input {
-  -webkit-transform-origin: 0 0;
-  -webkit-transform: scale(3);
+.sliders {
+  text-align: center;
+  width: 100%
+  margin: auto auto;
 }
