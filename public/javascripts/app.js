@@ -76,7 +76,7 @@
         socket
           .emit('base', x1 * (180 / g))
           .emit('elbow', y1 * (180 / g))
-          .emit('wrist', z1 * (180 / g);
+          .emit('wrist', z1 * (180 / g));
       }, 1000);
     })();
   });
