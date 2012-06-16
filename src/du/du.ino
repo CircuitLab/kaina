@@ -61,10 +61,10 @@ void process() {
   }
   int cmdid = atoi(cmd);
 
-  Serial.println(cmd);
-  Serial.println(pin);
-  Serial.println(val);
-  Serial.println(aux);
+  // Serial.println(cmd);
+  // Serial.println(pin);
+  // Serial.println(val);
+  // Serial.println(aux);
 
   switch(cmdid) {
     case 0:  sm(pin,val);              break;
