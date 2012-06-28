@@ -50,8 +50,10 @@ app.get('/arm/elbow', function(req, res) {
 
 app.post('/arm/elbow', function(req, res) {
   var val = req.body.val;
+  arm.servo.elbow.once('write', function() {
+    res.send({ res: 'success' });
+  });
   arm.wrist(val);
-  res.send({ res: 'success' });
 });
 
 app.get('/arm/wrist', function(req, res) {
@@ -63,8 +65,10 @@ app.get('/arm/wrist', function(req, res) {
 
 app.post('/arm/wrist', function(req, res) {
   var val = req.body.val;
+  arm.servo.wrist.once('write', function() {
+    res.send({ res: 'success' });
+  });
   arm.wrist(val);  
-  res.send({ res: 'success' });
 });
 
 /**
