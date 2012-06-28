@@ -245,13 +245,14 @@ void handleServo(char *pin, char *val, char *aux) {
     // Write to servo
     s.write(atoi(aux));
     // servo.write(atoi(aux));
+    char m[14];
+    sprintf(m, "%s::write::%03d", pin, atoi(aux));
+    Serial.println(m);
     delay(15);
-
     // TODO: Experiment with microsecond pulses
     // digitalWrite(pin, HIGH);   // start the pulse
     // delayMicroseconds(pulseWidth);  // pulse width
     // digitalWrite(pin, LOW);    // stop the pulse
-    sprintf(m, "%s::write::%03d", pin, atoi(aux));
   // 03(3) Read
   } else if (atoi(val) == 3) {
     Serial.println("reading servo");
@@ -262,3 +263,4 @@ void handleServo(char *pin, char *val, char *aux) {
     Serial.println(m);
   }
 }
+
