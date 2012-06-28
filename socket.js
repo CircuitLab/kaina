@@ -17,9 +17,11 @@ module.exports = function(app, arm) {
       arm.wrist(data);
     });
     
+    /*
     socket.on('base', function(data) {
       arm.base(data);
     });
+    */
     
     socket.on('elbow', function(data) {
       arm.elbow(data);
