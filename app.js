@@ -38,6 +38,40 @@ app.all('/admin', express.basicAuth(function(user, pass) {
 app.get('/admin', routes.admin);
 
 /**
+ * Web API.
+ */
+
+app.get('/arm/elbow', function(req, res) {
+  arm.servo.elbow.once('read', function(err, val) {
+    res.send({ val: parseInt(val, 10) });
+  });
+  arm.servo.elbow.read();
+});
+
+app.post('/arm/elbow', function(req, res) {
+  var val = req.body.val;
+  arm.servo.elbow.once('write', function() {
+    res.send({ res: 'success' });
+  });
+  arm.wrist(val);
+});
+
+app.get('/arm/wrist', function(req, res) {
+  arm.servo.wrist.once('read', function(err, val) {
+    res.send({ val: parseInt(val, 10) });
+  });
+  arm.servo.wrist.read();
+});
+
+app.post('/arm/wrist', function(req, res) {
+  var val = req.body.val;
+  arm.servo.wrist.once('write', function() {
+    res.send({ res: 'success' });
+  });
+  arm.wrist(val);  
+});
+
+/**
  * Boot.
  */
 
