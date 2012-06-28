@@ -53,6 +53,7 @@
      * Handle `devicemotion` event.
      */
     
+    /*
     (function() {
       var x = 0, y = 0, z = 0;
       
@@ -74,11 +75,11 @@
         if (z1 > g) z1 = g;
         
         socket
-          .emit('base', x1 * (180 / g))
           .emit('elbow', y1 * (180 / g))
           .emit('wrist', z1 * (180 / g));
       }, 1000);
     })();
+    */
   });
   
 })(this);
