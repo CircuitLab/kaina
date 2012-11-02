@@ -4,6 +4,22 @@ h1= title
 
 script(src='/javascripts/app.js')
 
-div.sliders
-  input#elbow(type='range', min=1, max=180)
-  input#wrist(type='range', min=1, max=180)
+div.images
+  img#camera
+
+div.buttons
+  h2 Hands
+  input#handsOpen(type='button', value='↑')
+  input#handsClose(type='button', value='↓')
+
+  h2 Elbow
+  input#elbowUp(type='button', value='↑')
+  input#elbowDown(type='button', value='↓')
+
+  h2 Soulder
+  input#shoulderUp(type='button', value='↑')
+  input#shoulderDown(type='button', value='↓')
+
+  h2 Base
+  input#baseRotate(type='button', value='↑')
+  input#baseReverse(type='button', value='↓')

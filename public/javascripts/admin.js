@@ -55,7 +55,7 @@
           setInterval(function() {
             ctx.drawImage(video, 0, 0, video.width, video.height);
             socket.emit('capture', canvas.toDataURL('image/jpeg'));
-          }, 1000 / 30);
+          }, 1000 / 15);
           
           /**
            * Add monitor.

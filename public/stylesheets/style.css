@@ -5,9 +5,9 @@ html {
 body {
   margin: 0;
   padding: 50px;
-  color: #fff;
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
+  background-color: 000;
   background-size: cover;
   background-repeat: no-repeat;
 }
