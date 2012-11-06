@@ -1,3 +1,5 @@
+module.exports = SayDo;
+
 var cp = require('child_process')
   , EventEmitter = require('events').EventEmitter;
 
