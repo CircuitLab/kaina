@@ -1,5 +1,10 @@
 var asserts = [
     {
+        'say': 'start all joint test'
+      , 'func': []
+      , 'time': 500
+    }
+  , {
         'say': 'open hands'
       , 'func': ['handsOpen']
       , 'time': 500

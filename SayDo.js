@@ -10,8 +10,9 @@ function SayDo(opts) {
 
 
   var self = this;
+  var i;
 
-  for (var i = 0; i < asserts.length; i++) {
+  for (i = 0; i < asserts.length; i++) {
     self.on(i == 0 ? 'ready' : eventPrefix + i, (function(asserts, i) {
       return function() {
         cp.exec('say ' + asserts[i].say, function() {
@@ -23,6 +24,7 @@ function SayDo(opts) {
       )}
     })(asserts, i));
   }
+  self.on(eventPrefix + i, function() { process.exit(); });
 
   this.target.on('ready', function() {
     self.emit('ready');
