@@ -8,18 +8,20 @@ div.images
   img#camera
 
 div.buttons
-  h2 Hands
-  input#handsOpen(type='button', value='↑')
-  input#handsClose(type='button', value='↓')
+  div.left
+    h2 Hands
+    input#handsOpen(type='button', value='←')
+    input#handsClose(type='button', value='→')
 
-  h2 Elbow
-  input#elbowUp(type='button', value='↑')
-  input#elbowDown(type='button', value='↓')
+    h2 Elbow
+    input#elbowUp(type='button', value='↑')
+    input#elbowDown(type='button', value='↓')
 
-  h2 Soulder
-  input#shoulderUp(type='button', value='↑')
-  input#shoulderDown(type='button', value='↓')
+  div.right
+    h2 Soulder
+    input#shoulderUp(type='button', value='↑')
+    input#shoulderDown(type='button', value='↓')
 
-  h2 Base
-  input#baseRotate(type='button', value='↑')
-  input#baseReverse(type='button', value='↓')
+    h2 Base
+    input#baseRotate(type='button', value='←')
+    input#baseReverse(type='button', value='→')
