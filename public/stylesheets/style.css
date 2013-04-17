@@ -28,10 +28,11 @@ a {
 
 .images {
   text-align: center;
+   width: 100%;
 }
 
 #camera {
-   width: 700px;
+   width: 900%;
 }
 
 input {
