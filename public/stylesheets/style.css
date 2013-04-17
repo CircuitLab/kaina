@@ -10,6 +10,10 @@ body {
   background-color: 000;
   background-size: cover;
   background-repeat: no-repeat;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
 }
 
 a {
@@ -20,4 +24,11 @@ a {
   text-align: center;
   width: 100%
   margin: auto auto;
+}
+
+input {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
 }
