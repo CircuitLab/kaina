@@ -4,8 +4,9 @@ html {
 
 body {
   margin: 0;
-  padding: 50px;
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 50px 35px;
+  font-size: 14px;
+  font-family: "Hiragino Mincho ProN", "Times New Roman", Georgia, serif;
   font-weight: 200;
   background-color: 000;
   background-size: cover;
@@ -28,25 +29,44 @@ a {
 
 .images {
   text-align: center;
-   width: 100%;
+  width: 100%;
 }
 
 #camera {
-   width: 97%;
+  width: 97%;
+}
+
+h2 {
+  margin: 1em 0 0.5em 0;
+}
+
+h2 span {
+  padding: 0 0 0 0.5em;
 }
 
 input {
-  font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   width: 50px;
   height: 50px;
   line-height: 50px;
   padding: 0px;
-  margin: 0px;
+  margin: 0 5px 0 0;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
+  -webkit-appearance: none;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(top,  #ffffff 0%, #cfcfcf 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#cfcfcf));
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#cfcfcf 100%);
+  background: -o-linear-gradient(top,  #ffffff 0%,#cfcfcf 100%);
+  background: -ms-linear-gradient(top,  #ffffff 0%,#cfcfcf 100%);
+  background: linear-gradient(to bottom,  #ffffff 0%,#cfcfcf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cfcfcf',GradientType=0 );
 }
 
 .left {
@@ -55,4 +75,27 @@ input {
 
 .right {
   float: right;
+}
+
+
+/* color change */
+/*
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#handsOpen    { background-color: green; }
+#handsClose   { background-color: red; }
+#elbowUp      { background-color: OrangeRed; }
+#elbowDown    { background-color: OrangeRed; }
+#shoulderUp   { background-color: DarkTurquoise; }
+#shoulderDown { background-color: DarkTurquoise; }
+#baseReverse  { background-color: blue; }
+#baseRotate   { background-color: blue; }
+
+input {
+  border: 1px dotted #ffffff;
+  color: #ffffff;
+  background-color: transparent;
 }
